@@ -7,6 +7,9 @@ import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.myroom.repositori.AplikasiSiswa
 import com.example.myroom.viewmodel.DetailViewModel
+import com.example.myroom.viewmodel.EditViewModel
+import com.example.myroom.viewmodel.EntryViewModel
+import com.example.myroom.viewmodel.HomeViewModel
 
 object PenyediaViewModel {
     val Factory = viewModelFactory {
