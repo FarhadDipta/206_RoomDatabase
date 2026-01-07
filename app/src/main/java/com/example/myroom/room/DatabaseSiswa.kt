@@ -17,6 +17,7 @@ abstract class  DatabaseSiswa : RoomDatabase(){
                 Room.databaseBuilder(
                     context, DatabaseSiswa::class.java,
                     "siswa_database")
+                    .allowMainThreadQueries() // Ditambahkan untuk mengatasi crash
                     .build().also { Instance = it }
             })
         }
