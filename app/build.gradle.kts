@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.myroomsatu"
+    namespace = "com.example.myroom"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.example.myroomsatu"
+        applicationId = "com.example.myroom"
         minSdk = 24
         targetSdk = 36
         versionCode = 1
