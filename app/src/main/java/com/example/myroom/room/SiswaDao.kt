@@ -1,11 +1,27 @@
 package com.example.myroom.room
 
-import androidx.contentpager.content.Query
+import androidx.room.Dao
+import androidx.room.Delete
+import androidx.room.Insert
+import androidx.room.OnConflictStrategy
+import androidx.room.Query
+import androidx.room.Update
+import kotlinx.coroutines.flow.Flow
 
-interface SiswaDao {
-    @Query ("SELECT * FROM tblSiswa ORDER BY nama ASC")
+@Dao
+interface SiswaDao{
+    @Query("SELECT * from tblSiswa ORDER BY nama ASC")
     fun getAllSiswa(): Flow<List<Siswa>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insert(siswa: Siswa)
+
+    @Query("SELECT * from tblSiswa WHERE id = :id")
+    fun getSiswa(id: Int): Flow<Siswa?> //hasill yang dikembalikan berupa siswa
+
+    @Update
+    suspend fun update(siswa: Siswa)
+    //
+    @Delete
+    suspend fun delete(siswa: Siswa)
 }
