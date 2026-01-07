@@ -22,6 +22,12 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.myroom.R
+import com.example.myroom.view.route.DestinasiEntry
+import com.example.myroom.viewmodel.DetailSiswa
+import com.example.myroom.viewmodel.EntryViewModel
+import com.example.myroom.viewmodel.UIStateSiswa
+import com.example.myroom.viewmodel.provider.PenyediaViewModel
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
