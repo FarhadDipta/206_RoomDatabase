@@ -35,6 +35,12 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.myroom.R
+import com.example.myroom.room.Siswa
+import com.example.myroom.view.route.DestinasiDetailSiswa
+import com.example.myroom.viewmodel.DetailSiswaUiState
+import com.example.myroom.viewmodel.DetailViewModel
+import com.example.myroom.viewmodel.provider.PenyediaViewModel
+import com.example.myroom.viewmodel.toSiswa
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)

@@ -1,6 +1,6 @@
 package com.example.myroom.view.route
 
-import com.example.myroomsatu.R
+import com.example.myroom.R
 
 object DestinasiHome : DestinasiNavigasi {
     override val route = "home"
