@@ -4,6 +4,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
+import com.example.myroom.room.Siswa
 
 class EntryViewModel (private val repositoriSiswa: RepositoriSiswa): ViewModel(){
     //    berisikan status siswa saat ini
@@ -37,4 +38,11 @@ data class DetailSiswa(
     val nama: String = "",
     val alamat: String = "",
     val telepon: String = ""
+)
+
+fun DetailSiswa.toSiswa(): Siswa = Siswa(
+    id = id,
+    nama = nama,
+    alamat = alamat,
+    telepon = telepon
 )
