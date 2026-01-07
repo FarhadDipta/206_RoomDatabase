@@ -1,7 +1,6 @@
 [versions]
 agp = "8.13.1"
 kotlin = "2.0.21"
-ksp = "2.0.21-1.0.21"
 coreKtx = "1.17.0"
 junit = "4.13.2"
 junitVersion = "1.3.0"
@@ -9,9 +8,9 @@ espressoCore = "3.7.0"
 lifecycleRuntimeKtx = "2.10.0"
 activityCompose = "1.12.0"
 composeBom = "2024.09.00"
-room = "2.6.1"
-contentpager = "1.0.0"
-roomCompiler = "2.8.4"
+room = "2.8.4"
+kspver = "2.0.21-1.0.26"
+roomCommonJvm = "2.8.4"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -36,13 +35,14 @@ room-compiler = {module = "androidx.room:room-compiler", version.ref = "room"}
 lifecycle-viewmodel-compose = {module = "androidx.lifecycle:lifecycle-viewmodel-compose", version = "2.10.0"}
 lifecycle-runtime-compose = {module = "androidx.lifecycle:lifecycle-runtime-compose", version = "2.10.0"}
 navigation-compose = {module = "androidx.navigation:navigation-compose", version = "2.9.6"}
-androidx-contentpager = { group = "androidx.contentpager", name = "contentpager", version.ref = "contentpager" }
-androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "roomCompiler" }
+androidx-room-common-jvm = { group = "androidx.room", name = "room-common-jvm", version.ref = "roomCommonJvm" }
 
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+ksp = {id = "com.google.devtools.ksp", version.ref = "kspver"}
 
+[bundles]
+room =["room-runtime","room-ktx"]
