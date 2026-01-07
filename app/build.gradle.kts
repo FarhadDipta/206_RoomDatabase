@@ -2,15 +2,15 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    alias(libs.plugins.ksp)
+    alias{libs.plugins.ksp}
 }
 
 android {
-    namespace = "com.example.myroom"
+    namespace = "com.example.myroomsatu"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.example.myroom"
+        applicationId = "com.example.myroomsatu"
         minSdk = 24
         targetSdk = 36
         versionCode = 1
@@ -50,18 +50,13 @@ dependencies {
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
-    //icons
     implementation(libs.compose.icons)
-    //room
-    implementation(libs.room.runtime)
-    implementation(libs.room.ktx)
-    ksp(libs.room.compiler) // <-- This is the correct way
-    //ViewModel
+    implementation(libs.bundles.room)
+    implementation(libs.androidx.room.common.jvm)
+    ksp(libs.room.compiler)
     implementation(libs.lifecycle.viewmodel.compose)
     implementation(libs.lifecycle.runtime.compose)
-    //Navigation
     implementation(libs.navigation.compose)
-
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
