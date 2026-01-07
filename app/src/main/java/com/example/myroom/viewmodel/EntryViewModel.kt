@@ -1,0 +1,28 @@
+package com.example.myroom.viewmodel
+
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
+import androidx.lifecycle.ViewModel
+
+class EntryViewModel (private val repositoriSiswa: RepositoriSiswa): ViewModel(){
+    //    berisikan status siswa saat ini
+    var uiStateSiswa by mutableStateOf(UIStateSiswa())
+        private set
+    //    fungsi untuk memvalidasi input
+    private fun validasiInput(uiState: DetailSiswa = uiStateSiswa.detailSiswa): Boolean{
+        return with(uiState){
+            nama.isNotBlank() && alamat.isNotBlank() && telepon.isNotBlank()
+        }
+    }
+    fun updateUiState(detailSiswa: DetailSiswa){
+        uiStateSiswa =
+            UIStateSiswa(detailSiswa = detailSiswa, isEntryValid = validasiInput(detailSiswa))
+    }
+    //    fungsi utnuk menyimpan data yang di entry
+    suspend fun saveSiswa(){
+        if (validasiInput()){
+            repositoriSiswa.insertSiswa(uiStateSiswa.detailSiswa.toSiswa())
+        }
+    }
+}
