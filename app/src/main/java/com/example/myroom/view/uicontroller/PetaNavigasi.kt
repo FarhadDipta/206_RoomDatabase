@@ -9,10 +9,10 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.example.myroom.view.route.DetailSiswaScreen
-import com.example.myroom.view.route.EditSiswaScreen
-import com.example.myroom.view.route.EntrySiswaScreen
-import com.example.myroom.view.route.HomeScreen
+import com.example.myroom.view.DetailSiswaScreen
+import com.example.myroom.view.EditSiswaScreen
+import com.example.myroom.view.EntrySiswaScreen
+import com.example.myroom.view.HomeScreen
 import com.example.myroom.view.route.DestinasiDetailSiswa
 import com.example.myroom.view.route.DestinasiDetailSiswa.itemIdArg
 import com.example.myroom.view.route.DestinasiEditSiswa
