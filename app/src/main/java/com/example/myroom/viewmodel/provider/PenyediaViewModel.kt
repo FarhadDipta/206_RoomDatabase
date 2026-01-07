@@ -5,6 +5,8 @@ import androidx.lifecycle.createSavedStateHandle
 import androidx.lifecycle.viewmodel.CreationExtras
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
+import com.example.myroom.repositori.AplikasiSiswa
+import com.example.myroom.viewmodel.DetailViewModel
 
 object PenyediaViewModel {
     val Factory = viewModelFactory {
@@ -16,7 +18,10 @@ object PenyediaViewModel {
         }
 //tambahan
         initializer {
-            DetailViewModel(this.createSavedStateHandle(),aplikasiSiswa().container.RepositoriSiswa)
+            DetailViewModel(
+                this.createSavedStateHandle(),
+                aplikasiSiswa().container.RepositoriSiswa
+            )
         }
         initializer {
             EditViewModel(this.createSavedStateHandle(), aplikasiSiswa().container.RepositoriSiswa)
